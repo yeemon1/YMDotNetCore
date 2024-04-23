@@ -12,10 +12,9 @@ namespace YMDotNetCore.ConsoleApp
     {
         private readonly SqlConnectionStringBuilder _sqlConnectionStringBuilder = new SqlConnectionStringBuilder()
         {
-            DataSource = "DESKTOP-IQ53SCH",
-            InitialCatalog = "NYZDotNetCore",
-            UserID = "sa",
-            Password = "sa@123",
+            DataSource = ".",
+            InitialCatalog = "YMDotNetCore",
+            IntegratedSecurity = true // Use Windows Authentication
         };
 
         public void Read()
@@ -75,13 +74,13 @@ namespace YMDotNetCore.ConsoleApp
             sqlConnection.Open();
 
             string query = @"INSERT INTO [dbo].[Tbl_Blog]
-           ([BlogTitle]
-           ,[BlogAuthor]
-           ,[BlogContent])
-     VALUES
-           (@BlogTitle
-		   ,@BlogAuthor
-		   ,@BlogContent)";
+                                ([BlogTitle]
+                                ,[BlogAuthor]
+                                ,[BlogContent])
+                            VALUES
+                                (@BlogTitle
+		                        ,@BlogAuthor
+		                        ,@BlogContent)";
 
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
             sqlCommand.Parameters.AddWithValue("@BlogTitle", title);
@@ -101,10 +100,10 @@ namespace YMDotNetCore.ConsoleApp
             sqlConnection.Open();
 
             string query = @"UPDATE [dbo].[Tbl_Blog]
-   SET [BlogTitle] = @BlogTitle
-      ,[BlogAuthor] = @BlogAuthor
-      ,[BlogContent] = @BlogContent
- WHERE BlogId = @BlogId";
+                                SET [BlogTitle] = @BlogTitle
+                                    ,[BlogAuthor] = @BlogAuthor
+                                    ,[BlogContent] = @BlogContent
+                                WHERE BlogId = @BlogId";
 
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
             sqlCommand.Parameters.AddWithValue("@BlogId", id);
@@ -125,7 +124,7 @@ namespace YMDotNetCore.ConsoleApp
             sqlConnection.Open();
 
             string query = @"DELETE FROM [dbo].[Tbl_Blog]
-      WHERE BlogId = @BlogId;";
+                             WHERE BlogId = @BlogId;";
 
             SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
             sqlCommand.Parameters.AddWithValue("@BlogId", id);

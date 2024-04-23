@@ -1,2 +1,8 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using YMDotNetCore.ConsoleApp;
+
+//AdoNetExample adoNetExample = new AdoNetExample();
+//adoNetExample.Edit(1);
+//Console.ReadLine();
+DapperExample dapperexample = new DapperExample();
+dapperexample.Run();
+Console.ReadLine();

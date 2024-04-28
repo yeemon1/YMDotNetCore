@@ -1,4 +1,4 @@
-﻿using YMDotNetCore.ConsoleApp;
+﻿using YMDotNetCore.ConsoleApp.EFCoreExamples;
 
 //AdoNetExample adoNetExample = new AdoNetExample();
 //adoNetExample.Edit(1);

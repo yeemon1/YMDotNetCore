@@ -5,8 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YMDotNetCore.ConsoleApp.Dtos;
 
-namespace YMDotNetCore.ConsoleApp
+namespace YMDotNetCore.ConsoleApp.EFCoreExamples
 {
     internal class EFCoreExample
     {
@@ -18,13 +19,13 @@ namespace YMDotNetCore.ConsoleApp
             //Edit(4);
             //Edit(5);
             //Create("title", "author", "content");
-            Update(5,"title", "author", "content");
+            Update(5, "title", "author", "content");
             Delete(4);
 
         }
         private void Read()
         {
-           // AppDbContext db = new AppDbContext();
+            // AppDbContext db = new AppDbContext();
             var lst = db.Blogs.ToList();
             foreach (BlogDto item in lst)
             {
@@ -37,8 +38,8 @@ namespace YMDotNetCore.ConsoleApp
         }
         private void Edit(int id)
         {
-          var item=  db.Blogs.FirstOrDefault(x => x.BlogId == id);   
-          if(item == null)
+            var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
+            if (item == null)
             {
                 Console.WriteLine("No Data Found ");
             }
@@ -73,7 +74,7 @@ namespace YMDotNetCore.ConsoleApp
             item.BlogTitle = title;
             item.BlogAuthor = author;
             item.BlogContent = content;
-            
+
             var result = db.SaveChanges();
             string message = result > 0 ? "Updating Successful" : "Saving Failed";
             Console.WriteLine(message);

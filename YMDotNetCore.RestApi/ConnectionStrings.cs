@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YMDotNetCore.ConsoleApp
+namespace YMDotNetCore.RestApi
 {
-    public  static  class ConnectionStrings
+    public static class ConnectionStrings
     {
         public static SqlConnectionStringBuilder SqlConnectionStringBuilder = new SqlConnectionStringBuilder()
         {

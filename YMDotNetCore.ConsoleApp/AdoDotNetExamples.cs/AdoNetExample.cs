@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YMDotNetCore.ConsoleApp
+namespace YMDotNetCore.ConsoleApp.AdoDotNetExamples.cs
 {
     public class AdoNetExample
     {

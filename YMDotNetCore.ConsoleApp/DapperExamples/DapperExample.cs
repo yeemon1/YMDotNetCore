@@ -8,8 +8,10 @@ using System.Reflection.Metadata;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using YMDotNetCore.ConsoleApp.DBSetting;
+using YMDotNetCore.ConsoleApp.Dtos;
 
-namespace YMDotNetCore.ConsoleApp
+namespace YMDotNetCore.ConsoleApp.DapperExamples
 {
     internal class DapperExample
     {
@@ -24,8 +26,8 @@ namespace YMDotNetCore.ConsoleApp
         private void Read()
         {
             IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            List<BlogDto>  lst = db.Query<BlogDto>("select * from Tbl_blog").ToList(); 
-            foreach(BlogDto item in lst)
+            List<BlogDto> lst = db.Query<BlogDto>("select * from Tbl_blog").ToList();
+            foreach (BlogDto item in lst)
             {
                 Console.WriteLine(item.BlogTitle);
                 Console.WriteLine(item.BlogAuthor);
@@ -37,32 +39,32 @@ namespace YMDotNetCore.ConsoleApp
         private void Edit(int id)
         {
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            var item = db.Query<BlogDto>("select * from Tbl_blog where blogId = @BlogId",new BlogDto { BlogId = id}).FirstOrDefault();
-            if(item is null)
+            var item = db.Query<BlogDto>("select * from Tbl_blog where blogId = @BlogId", new BlogDto { BlogId = id }).FirstOrDefault();
+            if (item is null)
             {
                 Console.WriteLine("No Data Found");
-                return; 
+                return;
             }
 
         }
-        private void  Create(string Title,string author,string content)
+        private void Create(string Title, string author, string content)
         {
             var item = new BlogDto
             {
                 BlogTitle = Title,
                 BlogAuthor = author,
-                BlogContent = content,         
+                BlogContent = content,
             };
             string query = @"INSERT INTO [dbo].[Tbl_Blog]
             ([BlogTitle],[BlogAuthor],[BlogContent]) VALUES
              (@BlogTitle,@BlogAuthor,@BlogContent)";
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            int result = db.Execute(query,item);
+            int result = db.Execute(query, item);
             string message = result > 0 ? "Saving Successful" : "Saving Failed";
             Console.WriteLine(message);
         }
 
-        private void Update(int id, string title,string author,string content)
+        private void Update(int id, string title, string author, string content)
         {
             var item = new BlogDto
             {

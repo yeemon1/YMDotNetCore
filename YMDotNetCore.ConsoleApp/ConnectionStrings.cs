@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace YMDotNetCore.ConsoleApp
 {
-    internal static  class ConnectionString
+    public  static  class ConnectionStrings
     {
         public static SqlConnectionStringBuilder SqlConnectionStringBuilder = new SqlConnectionStringBuilder()
         {
             DataSource = ".",
             InitialCatalog = "YMDotNetCore",
-            IntegratedSecurity = true // Use Windows Authentication
-
-
+            IntegratedSecurity = true, // Use Windows Authentication
+            TrustServerCertificate = true
         };
 
     }

@@ -28,6 +28,7 @@ namespace YMDotNetCore.RestApi.Controllers
         public IActionResult Edit(int id)
         {
             var item = _context.Blogs.FirstOrDefault(x => x.BlogId == id);
+
             if (item == null)
             {
                 return NotFound("No Data Found!.");
@@ -43,7 +44,6 @@ namespace YMDotNetCore.RestApi.Controllers
             string message = result > 0 ? "Saving Successful" : "Saving Failed";
             return Ok(message);
         }
-
 
         [HttpPut("{id}")]
         public IActionResult Update(int id, BlogModel blog)

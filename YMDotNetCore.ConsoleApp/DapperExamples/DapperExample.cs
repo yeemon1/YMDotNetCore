@@ -43,8 +43,9 @@ namespace YMDotNetCore.ConsoleApp.DapperExamples
             if (item is null)
             {
                 Console.WriteLine("No Data Found");
-                return;
+                return ;
             }
+            Console.WriteLine(item);
 
         }
         private void Create(string Title, string author, string content)

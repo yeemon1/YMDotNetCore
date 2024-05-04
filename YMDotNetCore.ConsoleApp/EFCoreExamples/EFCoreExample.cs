@@ -67,14 +67,12 @@ namespace YMDotNetCore.ConsoleApp.EFCoreExamples
             var item = db.Blogs.FirstOrDefault(x => x.BlogId == id);
             if (item == null)
             {
-                Console.WriteLine("No Data Found ");
+               Console.WriteLine("No Data Found ");
             }
-
             //item.BlogId = id,
             item.BlogTitle = title;
             item.BlogAuthor = author;
             item.BlogContent = content;
-
             var result = db.SaveChanges();
             string message = result > 0 ? "Updating Successful" : "Saving Failed";
             Console.WriteLine(message);
@@ -88,8 +86,6 @@ namespace YMDotNetCore.ConsoleApp.EFCoreExamples
                 Console.WriteLine("No Data Found ");
             }
             db.Blogs.Remove(item);
-
-
             var result = db.SaveChanges();
             string message = result > 0 ? "Delete Successful" : "Delete Failed";
             Console.WriteLine(message);

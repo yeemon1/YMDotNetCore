@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DotnetTrainingBatch4\DotnetTrainingBatch4.csproj" />
+    <ProjectReference Include="..\DotnetTrainingBatch4\YMDotNetCore.Share.csproj" />
   </ItemGroup>
 
 </Project>

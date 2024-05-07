@@ -1,9 +1,9 @@
 ﻿using Dapper;
-using DotnetTrainingBatch4;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using System.Data.SqlClient;
 using YMDotNetCore.RestApi.Model;
+using YMDotNetCore.Share;
 
 namespace YMDotNetCore.RestApi.Controllers
 {
@@ -88,7 +88,7 @@ namespace YMDotNetCore.RestApi.Controllers
             {
                 return NotFound("No Data To Update");
             }
-            conditions = conditions.Substring(0, conditions.Length - 2);
+            conditions = conditions.Substring(0, conditions.Length - 1);
             string query = $@"UPDATE [dbo].[Tbl_Blog]
                              SET {conditions}
                              WHERE BlogId = @BlogId";
@@ -108,7 +108,7 @@ namespace YMDotNetCore.RestApi.Controllers
             string query = @"DELETE FROM  [dbo].[Tbl_Blog]
                                 WHERE BlogId = @BlogId";
             using IDbConnection db = new SqlConnection(ConnectionStrings.SqlConnectionStringBuilder.ConnectionString);
-            int result = db.Execute(query, id);
+            int result = db.Execute(query, new BlogModel { BlogId = id });
             string message = result > 0 ? "Deleting  Successful" : "Saving Failed";
             return Ok(message);
         }

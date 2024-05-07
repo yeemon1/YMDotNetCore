@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace DotnetTrainingBatch4
+namespace YMDotNetCore.Share
 {
     public class DappperService
     {
@@ -11,17 +11,17 @@ namespace DotnetTrainingBatch4
         {
             _connectionstring = connectionstring;
         }
-        public List<T> Query<T>(string query,object? param = null)
+        public List<T> Query<T>(string query, object? param = null)
         {
             using IDbConnection db = new SqlConnection(_connectionstring);
-            var lst = db.Query<T>(query,param).ToList();
+            var lst = db.Query<T>(query, param).ToList();
             return lst;
         }
         public T QueryFirstorDefault<T>(string query, object? param = null)
         {
             using IDbConnection db = new SqlConnection(_connectionstring);
             var item = db.Query<T>(query, param).FirstOrDefault();
-            return item ;
+            return item;
         }
         public int Execute(string query, object? param = null)
         {

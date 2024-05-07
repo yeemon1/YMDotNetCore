@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Document", "Document", "{19
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YMDotNetCore.RestApi", "YMDotNetCore.RestApi\YMDotNetCore.RestApi.csproj", "{619AA5EB-BA7C-48D8-87CA-32C99255CA86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotnetTrainingBatch4", "DotnetTrainingBatch4\DotnetTrainingBatch4.csproj", "{3208764A-AFAF-4E6E-A09B-4308A2157053}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YMDotNetCore.Share", "DotnetTrainingBatch4\YMDotNetCore.Share.csproj", "{3208764A-AFAF-4E6E-A09B-4308A2157053}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

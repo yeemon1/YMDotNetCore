@@ -59,11 +59,11 @@ namespace YMDotNetCore.RestApi.Controllers
             string query = @"UPDATE [dbo].[Tbl_Blog]
                                 SET [BlogTitle] = @BlogTitle
                                     ,[BlogAuthor] = @BlogAuthor
-                                    ,[BlogContent] = @BlogContent
+                                    ,[BlogContent] = @BlogContent 
                                 WHERE BlogId = @BlogId";
 
             int result = _service.Execute(query,
-                new AdoDotNetParameter("@BlogId", id),
+               new AdoDotNetParameter("@BlogId", id),
                new AdoDotNetParameter("@BlogTitle", blog.BlogTitle),
                new AdoDotNetParameter("@BlogAuthor", blog.BlogAuthor),
                new AdoDotNetParameter("@BlogContent", blog.BlogContent)

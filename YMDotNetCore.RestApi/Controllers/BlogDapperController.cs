@@ -10,8 +10,6 @@ namespace YMDotNetCore.RestApi.Controllers
     [ApiController]
     public class BlogDapperController : ControllerBase
     { 
-       
-
         [HttpGet]
         public IActionResult GetBlogs()
         {

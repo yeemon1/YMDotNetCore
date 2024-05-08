@@ -31,10 +31,10 @@ namespace YMDotNetCore.RestApiWithNLayer.Features.MinTheinKha
         [HttpGet("{questionNo}/{no}")]
         public async Task<IActionResult> Answers(int questionNo,int no)
         {
-            var model = await GetDataAsync();
-            return Ok(model.answers.FirstOrDefault(x=>x.questionNo == questionNo && x.answerNo==no));
-
+            var model = await GetDataAsync();            
+            return Ok(model.answers.FirstOrDefault(x => x.questionNo == questionNo && x.answerNo == no));
         }
+       
     }
 
     public class LatHtaukBayDin

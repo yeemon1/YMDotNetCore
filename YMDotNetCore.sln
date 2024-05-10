@@ -18,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YMDotNetCore.RestApiWithNLa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YMDotNetCore.HttpClient", "YMDotNetCore.HttpClient\YMDotNetCore.HttpClient.csproj", "{CB187A78-6C4A-45BB-BD3A-A1F76D024AAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YMDotNetCore.ConsoleAppHttpClientExample", "YMDotNetCore.ConsoleAppHttpCLien\YMDotNetCore.ConsoleAppHttpClientExample.csproj", "{3892E960-288E-44E0-B3FC-607063C11A82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YMDotNetCore.ConsoleAppHttpClientExample", "YMDotNetCore.ConsoleAppHttpCLien\YMDotNetCore.ConsoleAppHttpClientExample.csproj", "{3892E960-288E-44E0-B3FC-607063C11A82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YMDotNetCore.RestClientExample", "YMDotNetCore.RestClientExample\YMDotNetCore.RestClientExample.csproj", "{F10C1B35-78DB-47FC-844C-97F995D42F18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{3892E960-288E-44E0-B3FC-607063C11A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3892E960-288E-44E0-B3FC-607063C11A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3892E960-288E-44E0-B3FC-607063C11A82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F10C1B35-78DB-47FC-844C-97F995D42F18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10C1B35-78DB-47FC-844C-97F995D42F18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10C1B35-78DB-47FC-844C-97F995D42F18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10C1B35-78DB-47FC-844C-97F995D42F18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

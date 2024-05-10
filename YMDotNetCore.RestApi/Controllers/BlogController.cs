@@ -25,7 +25,7 @@ namespace YMDotNetCore.RestApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult Edit(int id)
+        public IActionResult Get(int id)
         {
             var item = _context.Blogs.FirstOrDefault(x => x.BlogId == id);
 

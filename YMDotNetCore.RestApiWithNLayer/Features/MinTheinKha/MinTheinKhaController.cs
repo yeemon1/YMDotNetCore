@@ -12,7 +12,7 @@ namespace YMDotNetCore.RestApiWithNLayer.Features.MinTheinKha
         private async Task<LatHtaukBayDin> GetDataAsync()
         {
             string jsonStr = await System.IO.File.ReadAllTextAsync("data.json");
-            var model = JsonConvert.DeserializeObject<LatHtaukBayDin>(jsonStr);
+            var model = JsonConvert.DeserializeObject<LatHtaukBayDin>(jsonStr); 
             return model;
         }
 
@@ -31,7 +31,7 @@ namespace YMDotNetCore.RestApiWithNLayer.Features.MinTheinKha
         [HttpGet("{questionNo}/{no}")]
         public async Task<IActionResult> Answers(int questionNo,int no)
         {
-            var model = await GetDataAsync();            
+            var model = await GetDataAsync();
             return Ok(model.answers.FirstOrDefault(x => x.questionNo == questionNo && x.answerNo == no));
         }
        

@@ -15,12 +15,14 @@ namespace YMDotNetCore.RestApiWithNLayer.Features.Dictionary
             var model = JsonConvert.DeserializeObject<Dictionary>(jsonStr);
             return model;
         }
+       
         [HttpGet]
-        public async Task<IActionResult> GetVerbs()
+        public async Task<IActionResult> GetData()
         {
             var result = await GetDataAsync();
-            return Ok(result.Tbl_MMProverbsTitle);
+            return Ok(result.Tbl_MMProverbs);
         }
+
         [HttpGet("{title}")]
         public async Task<IActionResult> Getproverbstitle(string title)
         {
@@ -35,11 +37,19 @@ namespace YMDotNetCore.RestApiWithNLayer.Features.Dictionary
             }
             return Ok(titlelist);
         }
+        
         [HttpGet("Title/{titlename}")]
         public async Task<IActionResult> GetproverbDetail(string titlename)
         {
             var result = await GetDataAsync();
             var  title = result.Tbl_MMProverbs.FirstOrDefault(x => x.ProverbName == titlename);
+            return Ok(title);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Add(Tbl_Mmproverbstitle model)
+        {
+            var result = await GetDataAsync();
+            var title = result.Tbl_MMProverbsTitle.Append(model);
             return Ok(title);
         }
 

@@ -56,11 +56,12 @@ namespace YMDotNetCore.RestApi.Controllers
             {
                 return NotFound("Data Not Found");
             }
+
             string query = @"UPDATE [dbo].[Tbl_Blog]
-                                SET [BlogTitle] = @BlogTitle
-                                    ,[BlogAuthor] = @BlogAuthor
-                                    ,[BlogContent] = @BlogContent 
-                                WHERE BlogId = @BlogId";
+                             SET [BlogTitle] = @BlogTitle,
+                             [BlogAuthor] = @BlogAuthor,
+                             [BlogContent] = @BlogContent 
+                             WHERE BlogId = @BlogId";
 
             int result = _service.Execute(query,
                new AdoDotNetParameter("@BlogId", id),

@@ -20,7 +20,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YMDotNetCore.HttpClient", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YMDotNetCore.ConsoleAppHttpClientExample", "YMDotNetCore.ConsoleAppHttpCLien\YMDotNetCore.ConsoleAppHttpClientExample.csproj", "{3892E960-288E-44E0-B3FC-607063C11A82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YMDotNetCore.RestClientExample", "YMDotNetCore.RestClientExample\YMDotNetCore.RestClientExample.csproj", "{F10C1B35-78DB-47FC-844C-97F995D42F18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YMDotNetCore.RestClientExample", "YMDotNetCore.RestClientExample\YMDotNetCore.RestClientExample.csproj", "{F10C1B35-78DB-47FC-844C-97F995D42F18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YMDotNetCore.PizzaApi", "YMDotNetCore.PizzaApi\YMDotNetCore.PizzaApi.csproj", "{C2166045-0848-4BF5-BDD4-D85E7C72BBA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{F10C1B35-78DB-47FC-844C-97F995D42F18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F10C1B35-78DB-47FC-844C-97F995D42F18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F10C1B35-78DB-47FC-844C-97F995D42F18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2166045-0848-4BF5-BDD4-D85E7C72BBA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2166045-0848-4BF5-BDD4-D85E7C72BBA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2166045-0848-4BF5-BDD4-D85E7C72BBA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2166045-0848-4BF5-BDD4-D85E7C72BBA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

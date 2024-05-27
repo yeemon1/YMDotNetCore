@@ -72,6 +72,7 @@ namespace YMDotNetCore.RestApi.Controllers
                 return NotFound("No Data Found");
             }
             string conditions = string.Empty;
+          
             if (!string.IsNullOrEmpty(blog.BlogTitle))
             {
                 conditions += "[BlogTitle] = @BlogTitle,";

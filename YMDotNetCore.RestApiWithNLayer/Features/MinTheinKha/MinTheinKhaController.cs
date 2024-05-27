@@ -15,7 +15,7 @@ namespace YMDotNetCore.RestApiWithNLayer.Features.MinTheinKha
             var model = JsonConvert.DeserializeObject<LatHtaukBayDin>(jsonStr); 
             return model;
         }
-
+       
         [HttpGet("question")]
         public async Task<IActionResult> Questions()
         {

@@ -33,18 +33,20 @@ namespace YMDotNetCore.RestApiWithNLayer.Features.Dictionary
             var titlelist = new List<string>();
             foreach (var item in detailsubtitle) 
             {
+                title.Remove(item.);
                 titlelist.Add(item.ProverbName);
             }
             return Ok(titlelist);
         }
-        
+      
         [HttpGet("Title/{titlename}")]
         public async Task<IActionResult> GetproverbDetail(string titlename)
         {
             var result = await GetDataAsync();
-            var  title = result.Tbl_MMProverbs.FirstOrDefault(x => x.ProverbName == titlename);
+            var  title = result.Tbl_MMProverbs.FirstOrDefault(x => x.ProverbName == titlename); 
             return Ok(title);
         }
+
         [HttpPost]
         public async Task<IActionResult> Add(Tbl_Mmproverbstitle model)
         {

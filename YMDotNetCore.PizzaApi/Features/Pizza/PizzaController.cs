@@ -50,7 +50,7 @@ namespace YMDotNetCore.PizzaApi.Features.Pizza
             var item = _dapperService.QueryFirstorDefault<PizzaOrderInvoiceHeadModel>
                 (PizzaQuery.PizzaOrderQuery,new {PizzaOrderInvoiceNo = invoiceNo});
             var lst = _dapperService.Query<PizzaOrderInvoiceDetailModel>
-                (PizzaQuery.PizzaOrderQuery, new { PizzaOrderInvoiceNo = invoiceNo });
+                (PizzaQuery.PizzaOrderDetailQuery, new { PizzaOrderInvoiceNo = invoiceNo });
 
             var response = new PizzaOrderInvoiceResponse
             {
